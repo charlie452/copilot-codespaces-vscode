@@ -1,0 +1,36 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int const N=9;
+int const n=3;
+
+void print_board(vector<vector<int> >board){
+	for(int i=0;i<N;i++){
+		for(int j=0;j<N;j++){
+			cout<<board[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+}
+int main()
+{
+	//creating a board 
+	vector<vector<int>>board(N);
+	//input in a board
+	for (int i=0;i<N;i++) //for loop for rows
+	{
+		for(int j=0;j<N;j++) //for loop for columns
+		{
+			int input; 
+			cin>>input;
+			if(input>=0 && input<=N) board[i].push_back(j);
+			else{
+				cout<<"Invalid inputs..."<<endl;
+				return -1;
+			}	
+		}
+	}
+	cout<<endl;
+	print_board(board);
+}
